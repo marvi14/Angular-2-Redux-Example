@@ -14,7 +14,7 @@ export interface State {
   user: User
 };
 
-const initialState: State = { user: null };
+const initialState: State = { user: JSON.parse(localStorage.getItem('user')) || null };
 
 export function reducer(state = initialState, action: loginActions.Actions): State {
 

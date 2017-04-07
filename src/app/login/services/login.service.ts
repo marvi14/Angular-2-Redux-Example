@@ -25,11 +25,11 @@ export class LoginService {
 			return_scopes: true, // returns the scopes that the user authorized
 			scope: 'public_profile,user_friends,email' // the scopes we want the user to authorize
 		}).then(
-			(response: FacebookLoginResponse) => this.getUserData(response),
+			(response: FacebookLoginResponse) => this.getUserFacebookData(response),
 			(error: any) => console.error(error));
 	}
 
-	getUserData(facebookData) {
+	getUserFacebookData(facebookData) {
 		var accessToken = facebookData.authResponse.accessToken;
 		this.fb.api('/me?access_token=' + accessToken, 'get', { fields: "id,name,picture,email,gender,last_name,first_name,birthday" }).then(
 			(user: FacebookLoginResponse) => this.logUser(user)
@@ -38,6 +38,7 @@ export class LoginService {
 
 	logUser(user) {
 		var loggedUser = new User(user.id, user.email, user.picture.data.url);
+		localStorage.setItem('user', JSON.stringify(loggedUser));
 		this._store.dispatch(new loginActions.LogUserAction(loggedUser));
 	}
 
