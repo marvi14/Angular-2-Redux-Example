@@ -1,3 +1,11 @@
-<h1>
-  {{title}}
-</h1>
+<angular-loader></angular-loader>
+<div *ngIf="router.url !== '/login'">
+    <nav>
+        <a routerLink="main">Main</a>
+        <a routerLink="lazy">Lazy</a>
+    </nav>
+    <h1>
+		Welcome!!
+	</h1>
+</div>
+<router-outlet></router-outlet>

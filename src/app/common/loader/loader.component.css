@@ -1,0 +1,41 @@
+/* default .loading styles, .loading should be invisible, opacity: 0, z-index: -1 */
+
+.loading {
+    opacity: 0.8;
+    transition: opacity .8s ease-in-out;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 99999999;
+    text-align: center;
+    color: white;
+    padding-top: 23%;
+}
+
+.loading-spinner {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border-top: 2px solid #07d;
+    border-right: 2px solid transparent;
+    animation: spin .6s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
