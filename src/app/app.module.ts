@@ -14,6 +14,8 @@ import { CanActivateViaAuthGuard } from './app.guards';
 import { SweetAlertService } from './common/sweetAlert';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { PushNotificationsService } from 'angular2-notifications';
+import { PushNotifications } from './common/pushNotifications';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, './assets/translations/', '.json');
@@ -43,7 +45,9 @@ export function HttpLoaderFactory(http: Http) {
   providers: [
     FacebookService,
     CanActivateViaAuthGuard,
-    SweetAlertService
+    SweetAlertService,
+    PushNotificationsService,
+    PushNotifications
   ],
   bootstrap: [AppComponent]
 })
