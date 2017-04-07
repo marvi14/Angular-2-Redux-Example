@@ -18,13 +18,15 @@
         "prefix": "app",
         "styles": [
             "../node_modules/bootstrap/dist/css/bootstrap.css",
+            "../node_modules/sweetalert2/dist/sweetalert2.min.css",
             "styles.css"
         ],
         "scripts": [
             "../node_modules/jquery/dist/jquery.js",
             "../node_modules/tether/dist/js/tether.js",
             "../node_modules/bootstrap/dist/js/bootstrap.js",
-            "../node_modules/ng2-facebook-sdk/dist/sdk.js"
+            "../node_modules/ng2-facebook-sdk/dist/sdk.js",
+            "../node_modules/sweetalert2/dist/sweetalert2.min.js"
         ],
         "environments": {
             "source": "environments/environment.ts",

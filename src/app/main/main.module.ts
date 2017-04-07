@@ -11,6 +11,7 @@ import { routing } from './main.routing';
 import { MainComponent } from './main.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     routing,
     FormsModule,
     EffectsModule.run(CurrencyEffects),
-    CommonModule
+    CommonModule,
+    TranslateModule
   ],
   providers: [CurrencyService]
 })

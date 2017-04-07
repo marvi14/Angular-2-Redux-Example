@@ -1,4 +1,13 @@
 <div class="container">
+    <div>
+        <h2>{{ 'TITLE' | translate }}</h2>
+        <label>
+            {{ 'SELECT' | translate }}
+            <select #langSelect (change)="translate.use(langSelect.value)">
+                <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+            </select>
+        </label>
+    </div>
     <new-operation (addOperation)="addOperation($event)"></new-operation>
     <app-currencies (currencySelected)="onCurrencySelected($event)" [currencies]="currencies | async" [selectedCurrency]="selectedCurrency | async"></app-currencies>
     <operations-list [operationsFromComponent]="operations| async" [selectedCurrency]="selectedCurrency | async" (deleteOperation)="deleteOperation($event)" (incrementOperation)="incrementOperation($event)" (decrementOperation)="decrementOperation($event)"></operations-list>

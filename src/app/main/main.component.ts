@@ -5,6 +5,7 @@ import * as currenciesActions from "./actions/currencies";
 
 import { Operation } from "./models/operation.model";
 import { Observable } from "rxjs";
+import { TranslateService } from '@ngx-translate/core';
 
 /* In order to access the application state, reference the reducers folder again, accessing all the exported members from it though index.ts */
 import * as fromRoot from '../reducers.index';
@@ -22,7 +23,7 @@ export class MainComponent {
 	public currencies: Observable<string[]>;
 	public selectedCurrency: Observable<string>;
 
-	constructor(private _store: Store<fromRoot.State>) {
+	constructor(private _store: Store<fromRoot.State>, private translate: TranslateService) {
 		//_store.let executes getEntities and returns its value.
 		this.operations = _store.let(fromRoot.getEntities);
 		this.currencies = _store.let(fromRoot.getCurrencyEntities);
