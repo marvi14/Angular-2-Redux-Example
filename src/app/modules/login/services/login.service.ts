@@ -1,11 +1,11 @@
-import { HttpService } from '../../common/HttpService';
-import * as fromRoot from '../../reducers.index';
+import { HttpService } from '../../../common/HttpService';
+import * as fromRoot from '../../../reducers.index';
 import { Injectable } from '@angular/core';
 import { FacebookService, FacebookLoginResponse, FacebookInitParams } from 'ng2-facebook-sdk';
 import { State, Store } from "@ngrx/store";
 import { User } from '../models/user';
 import * as loginActions from '../actions/login';
-import { PushNotifications } from '../../common/pushNotifications';
+import { PushNotifications } from '../../../common/pushNotifications';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 

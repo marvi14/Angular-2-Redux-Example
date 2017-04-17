@@ -1,7 +1,7 @@
 import { combineReducers, ActionReducer } from '@ngrx/store';
-import * as fromOperations from './main/reducers/operations';
-import * as fromCurrencies from './main/reducers/currencies';
-import * as fromLogin from './login/reducers/login';
+import * as fromOperations from './modules/main/reducers/operations';
+import * as fromCurrencies from './modules/main/reducers/currencies';
+import * as fromLogin from './modules/login/reducers/login';
 import { Observable } from "rxjs";
 import { compose } from "@ngrx/core";
 

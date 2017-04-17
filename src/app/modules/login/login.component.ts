@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from "rxjs";
 import { LoginService } from './services/login.service';
-import { SweetAlertService } from '../common/sweetAlert';
+import { SweetAlertService } from '../../common/sweetAlert';
 
 @Component({
 	templateUrl: './login.template.html',

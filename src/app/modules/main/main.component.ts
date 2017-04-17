@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
 import { TranslateService } from '@ngx-translate/core';
 
 /* In order to access the application state, reference the reducers folder again, accessing all the exported members from it though index.ts */
-import * as fromRoot from '../reducers.index';
+import * as fromRoot from '../../reducers.index';
 
 @Component({
 	selector: 'marvi-main-component',

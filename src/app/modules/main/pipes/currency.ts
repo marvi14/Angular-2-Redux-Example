@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import * as fromRoot from '../../reducers.index';
+import * as fromRoot from '../../../reducers.index';
 import { State, Store } from "@ngrx/store";
 const fx = require('money');
 fx.base = "USD";
