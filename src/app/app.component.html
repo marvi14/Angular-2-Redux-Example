@@ -1,12 +1,3 @@
 <angular-loader></angular-loader>
-<div *ngIf="router.url !== '/login'">
-    <nav>
-        <a routerLink="main">Main</a>
-        <a routerLink="lazy">Lazy</a>
-        <a (click)="logout()">Logout</a>
-    </nav>
-    <h1>
-		Welcome!!
-	</h1>
-</div>
+<router-outlet name="app-header"></router-outlet>
 <router-outlet></router-outlet>

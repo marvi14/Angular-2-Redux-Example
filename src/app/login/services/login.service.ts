@@ -7,11 +7,13 @@ import { User } from '../models/user';
 import * as loginActions from '../actions/login';
 import { PushNotifications } from '../../common/pushNotifications';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
+
 
 @Injectable()
 export class LoginService {
 
-	constructor(private http: HttpService, private fb: FacebookService, private _store: Store<fromRoot.State>, private _push: PushNotifications, private translate: TranslateService) {
+	constructor(private http: HttpService, private fb: FacebookService, private _store: Store<fromRoot.State>, private _push: PushNotifications, private translate: TranslateService, private router: Router) {
 		let fbParams: FacebookInitParams = {
 			appId: '1137637229620760',
 			xfbml: true,
@@ -42,6 +44,7 @@ export class LoginService {
 		localStorage.setItem('user', JSON.stringify(loggedUser));
 		this._store.dispatch(new loginActions.LogUserAction(loggedUser));
 		this._push.show(this.translate.instant('TITLE'), this.translate.instant('SELECT'), (() => alert(loggedUser.email)));
+		this.router.navigate(['/main']);
 	}
 
 }
